@@ -10,14 +10,13 @@ module TwitterPage
       hash = {
         "profile page header" => [:class => "profile-page-header"],
         "profile name"        => [:class => "profile-field"],
-        "avatar image"        => [:class => "avatar"],
       }
       hash.has_key?(key) ? hash[key] : defined?(super) ? super : raise("Locator [#{key}] does not exist in #{self.class.to_s}")
     end
 
     def is_loaded
       super
-      @browser.img(*locator("avatar image")).wait_until_presents
+      @browser.div(*locator("profile page header")).span(*locator("profile name")).wait_until_present
     end
 
     def get_name(name)

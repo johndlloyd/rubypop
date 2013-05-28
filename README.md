@@ -27,3 +27,4 @@ example commands
 * rake FILES=name.rb
 * rake THREADS=1 PROCESSES=1
 * rake THREADS=2 PROCESSES=5
+* rake TARGET="http://localhost:4444/wd/hub"

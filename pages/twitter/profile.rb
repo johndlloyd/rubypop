@@ -24,7 +24,7 @@ module TwitterPage
       name.replace @browser.div(*locator("profile page header")).span(*locator("profile name")).text
       self
     end
-    
+
     def get_location(location)
       location.replace @browser.div(*locator("profile page header")).span(*locator("location")).text.strip
       self

@@ -38,4 +38,18 @@ describe "Twitter" do
     expect(name).to eq("Behance")
   end
 
+  it "shows the name Selenium Conference for @seleniumconf" do
+    name = ""
+    @page.open(TwitterPage::Profile, "/seleniumconf")
+         .get_name(name)
+    expect(name).to eq("Selenium Conference")
+  end
+
+  it "shows the name NYCSelenium for @nycselenium" do
+    name = ""
+    @page.open(TwitterPage::Profile, "/nycselenium")
+         .get_name(name)
+    expect(name).to eq("NYCSelenium")
+  end
+
 end

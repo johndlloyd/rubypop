@@ -9,7 +9,13 @@ module PageObjects
 
     def open(page, append = "")
       begin
-        @browser.goto(page::URL + append)
+        begin
+          Timeout::timeout(3) do
+            @browser.goto(page::URL + append)
+          end
+        rescue Timeout::Error => msg
+          # puts "Recovered from Timeout"
+        end
       rescue => e
         raise e.message
       end

@@ -181,8 +181,17 @@ def merge_output(pool)
   # Wait for thread pool to finish
   at_exit do
 
+    # Start logging time
+    started_at = Time.now
+
     # Gracefully shutdown the thread pool
     pool.shutdown
+
+    # End logging time
+    puts "\n---------------------------------------------------------------------------\n"
+    puts "\nTotal Execution Time: %.5f seconds\n" % (Time.now - started_at)
+    puts "\n---------------------------------------------------------------------------\n"
+    puts "\n"
 
     # Validate all xml result files
     normalize_xml("output")

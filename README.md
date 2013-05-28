@@ -16,7 +16,7 @@ options
 * **EXAMPLE** : regular expression that can target a specific test
 * **TARGET** : specify a remote Selenium server to run tests on
 * **EMAIL** : email address to send screenshots and stack traces
-* **BROWSER** : default : firefox
+* **BROWSER** : specify what browser to run tests against
 * **PLATFORM** : specify which platform to run tests against
 * **RETRY** : how many times to retry a failed test before returning a result
 

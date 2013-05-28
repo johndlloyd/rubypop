@@ -38,18 +38,4 @@ describe "Twitter" do
     expect(location).to eq("")
   end
   
-  it "shows the location Boston, MA for @seleniumconf" do
-    location = ""
-    @page.open(TwitterPage::Profile, "/seleniumconf")
-         .get_location(location)
-    expect(location).to eq("Boston, MA")
-  end
-  
-  it "shows the location NYC for @nycselenium" do
-    location = ""
-    @page.open(TwitterPage::Profile, "/nycselenium")
-         .get_location(location)
-    expect(location).to eq("NYC")
-  end
-  
 end
